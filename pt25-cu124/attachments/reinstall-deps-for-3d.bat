@@ -26,7 +26,7 @@ pause
 @REM Ref: https://github.com/ashawkey/stable-dreamfusion/issues/360#issuecomment-2292510049
 @REM Ref: https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/
 
-set TORCH_CUDA_ARCH_LIST=5.2+PTX;6.0;6.1+PTX;7.5;8.0;8.6;8.9+PTX
+set TORCH_CUDA_ARCH_LIST=8.0;8.6+PTX
 
 @REM ===========================================================================
 
@@ -87,7 +87,7 @@ for %%i in (.\tmp_build\*.whl) do .\python_embeded\python.exe -s -m pip install 
 @REM Limit Ninja jobs to avoid OOM. If have RAM larger than 96GB, just remove this line.
 rem set MAX_JOBS=4
 
-rem .\python_embeded\python.exe -s -m pip install flash-attn --no-build-isolation
+.\python_embeded\python.exe -s -m pip install flash-attn --no-build-isolation
 
 @REM ===========================================================================
 
